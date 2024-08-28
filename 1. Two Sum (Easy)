@@ -1,0 +1,26 @@
+import java.util.HashMap;
+
+class Solution {
+    public int[] twoSum(int[] nums, int target) {
+        // Use a HashMap to store the complement and its index
+        HashMap<Integer, Integer> map = new HashMap<>();
+        
+        // Iterate through the array
+        for (int i = 0; i < nums.length; i++) {
+            // Calculate the complement
+            int complement = target - nums[i];
+            
+            // Check if the complement exists in the map
+            if (map.containsKey(complement)) {
+                // If found, return the indices
+                return new int[] { map.get(complement), i };
+            }
+            
+            // Otherwise, add the number and its index to the map
+            map.put(nums[i], i);
+        }
+        
+        // In case there is no solution (though the problem guarantees one)
+        throw new IllegalArgumentException("No two sum solution");
+    }
+}

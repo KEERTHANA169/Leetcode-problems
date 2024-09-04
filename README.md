@@ -1,1 +1,1 @@
-# Leetcode-array-problems
+# Leetcode-problems
